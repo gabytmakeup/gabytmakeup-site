@@ -6,88 +6,55 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-    }
-
-    /* Sección principal con imagen de fondo */
-    .hero {
-      background: url('hero.jpg') no-repeat center center/cover;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
       height: 100vh;
-      color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      background-attachment: fixed;
+      background: url('IMG_2719.JPG') no-repeat center center;
+      background-size: cover;
     }
-
-    .hero h1 {
-      font-size: 36px;
-      margin: 0 0 10px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    h1 {
+      font-size: 28px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
-
-    /* Botones */
     .btn {
       display: inline-block;
-      padding: 12px 20px;
       margin: 10px;
-      border: none;
-      border-radius: 6px;
+      padding: 12px 25px;
       font-size: 16px;
-      cursor: pointer;
       text-decoration: none;
-      color: white;
-      transition: transform 0.2s ease;
-    }
-    .btn:hover {
-      transform: scale(1.05);
+      border-radius: 6px;
+      transition: 0.3s;
     }
     .whatsapp {
-      background-color: #25d366;
+      background-color: #25D366;
+      color: white;
     }
     .instagram {
-      background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      color: white;
     }
-
-    /* Footer */
-    footer {
-      background-color: #111;
-      color: #eee;
-      text-align: center;
-      padding: 15px;
-    }
-    footer a {
-      color: #eee;
-      margin: 0 8px;
-      text-decoration: none;
-      font-size: 18px;
+    .btn:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <!-- Hero principal -->
-  <section class="hero">
-    <h1>✨ Bienvenidas a la página de Gaby T Makeup ✨</h1>
-    <p>Muy pronto aquí estarán mis clases online y todo lo relacionado con mi marca.</p>
-    <a href="https://wa.me/17867168939" class="btn whatsapp">💬 Escríbeme por WhatsApp</a>
-    <a href="https://instagram.com/gabytmakeup" class="btn instagram">📸 Sígueme en Instagram</a>
-  </section>
+  <h1>✨ Bienvenidas a la página de Gaby T Makeup ✨</h1>
+  <p>Muy pronto aquí estarán mis clases online y todo lo relacionado con mi marca.</p>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Gaby T Makeup | Todos los derechos reservados</p>
-    <div>
-      <a href="https://instagram.com/gabytmakeup">Instagram</a> |
-      <a href="https://wa.me/17867168939">WhatsApp</a>
-    </div>
-  </footer>
+  <a class="btn whatsapp" href="https://wa.me/17867168939" target="_blank">💬 Escríbeme por WhatsApp</a>
+  <a class="btn instagram" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
 </body>
 </html>
