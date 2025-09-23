@@ -331,8 +331,43 @@
     </div>
   </section>
 
-  <!-- ====== CONTACTO ====== -->
-  <section id="contacto" style="background:#fff;">
-    <div class="wrap">
-      <h2 class="h2">Contacto</h2>
-      <p class="sub">¿Lista para brillar? Escríbeme y agend
+  /* ===== Contacto: botones de redes ===== */
+.lead {
+  font-size: 1.1rem;
+  color: #6b6b6b;
+  margin-bottom: 1.25rem;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); opacity: .95; }
+
+/* Colores de cada red */
+.btn-whatsapp { background: #25D366; }
+.btn-ig {
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+.btn-tt { background: #000; }
+.btn-yt { background: #ff0033; }
+
+/* Responsive: en pantallas anchas, 2 columnas */
+@media (min-width: 680px) {
+  .social-grid { grid-template-columns: 1fr 1fr; }
+}
