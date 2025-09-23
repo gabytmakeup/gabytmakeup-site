@@ -1,60 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Gaby T Makeup</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      text-align: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: url('IMG_2718.JPG') no-repeat center center;
-      background-size: cover;
-    }
-    h1 {
-      font-size: 28px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      font-size: 16px;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-    .whatsapp {
-      background-color: #25D366;
-      color: white;
-    }
-    .instagram {
-      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-      color: white;
-    }
-    .btn:hover {
-      opacity: 0.9;
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-  <h1>✨ Bienvenidas a la página de Gaby T Makeup ✨</h1>
-  <p>Muy pronto aquí estarán mis clases online y todo lo relacionado con mi marca.</p>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaby T Makeup — Natural & Glam</title>
+  <meta name="description" content="Maquillaje natural & glam. Clases, citas y formación con Gaby T Makeup.">
 
-  <a class="btn whatsapp" href="https://wa.me/17867168939" target="_blank">💬 Escríbeme por WhatsApp</a>
-  <a class="btn instagram" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
-</body>
-</html>
+  <!-- Tipografías elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5efe9;           /* crema */
+      --ink:#2b2320;          /* texto */
+      --muted:#6f5e56;        /* texto suave */
+      --accent:#7e1f3d;       /* borgoña */
+      --gold:#c9a15b;         /* dorado */
+      --shadow:0 22px 60px rgba(0,0,0,.25);
+      --radius:18px;
+      --container: min(1000px, 92vw);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+    }
+    a{color:inherit}
+
+    /* ------- HERO ------- */
+    .hero{
+      min-height:100vh;
+      display:grid; place-items:center;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+        url("IMG_2718.JPG") center/cover no-repeat fixed; /* usa tu imagen */
+      text-align:center;
+      color:#fff;
+      padding: clamp(60px, 10vh, 120px) 16px 80px;
+    }
+    .heroContent{
+      width:var(--container);
+    }
+    .quote{
+      font-family:"Dancing Script", cursive;
+      font-size: clamp(28px, 6.5vw, 48px);
+      line-height:1.1;
+      margin: 0 0 14px;
+      text-shadow: 0 4px 24px rgba(0,0,0,.45);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; justify-content:center;
+      font-family:"Playfair Display",serif; font-weight:700; letter-spacing:.02em;
+      font-size: clamp(18px, 3.8vw, 22px);
+      opacity:.95; margin-bottom:10px;
+    }
+    .cta{
+      margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:600;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+      transition:transform .15s ease, filter .2s;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(180deg,var(--gold),#a98648); color:#fff}
+    .btn-ghost{background:rgba(255,255,255,.75); color:#1f1a18; border:1px solid rgba(255,255,255,.95)}
+
+    /* ------- BLOQUE SECCIÓN ------- */
+    .section{
+      width:var(--container);
+      margin: 64px auto;
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .section__head{
+      background:linear-gradient(180deg, #fff, #fbf6f1);
+      padding:28px 24px 8px;
+      text-align:center;
+      border-bottom:1px solid #f0e9e2;
+    }
+    .kicker{
+      color:var(--accent);
+      font-family:"Playfair Display",serif; letter-spacing:.08em;
+      font-size:14px; text-transform:uppercase;
+    }
+    .script{
+      font-family:"Dancing Script", cursive;
+      font-size: clamp(28px, 6.5vw, 44px);
+      color:var(--accent);
+      margin: 6px 0 14px;
+    }
+    .section__body{
+      padding: 26px 22px 34px;
+      display:grid; grid-template-columns: 1fr; gap:20
