@@ -13,90 +13,119 @@
 
   <style>
     :root{
-      --bg:#f5efe9;           /* crema */
-      --ink:#2b2320;          /* texto */
-      --muted:#6f5e56;        /* texto suave */
-      --accent:#7e1f3d;       /* borgoña */
-      --gold:#c9a15b;         /* dorado */
+      --bg:#f5efe9; --ink:#2b2320; --muted:#6f5e56;
+      --accent:#7e1f3d; --gold:#c9a15b;
+      --radius:18px; --container:min(1000px,92vw);
       --shadow:0 22px 60px rgba(0,0,0,.25);
-      --radius:18px;
-      --container: min(1000px, 92vw);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
-    body{
-      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-    }
-    a{color:inherit}
+    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
 
-    /* ------- HERO ------- */
+    /* HERO (con imagen tuya) */
     .hero{
       min-height:100vh;
-      display:grid; place-items:center;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)),
-        url("IMG_2718.JPG") center/cover no-repeat fixed; /* usa tu imagen */
-      text-align:center;
-      color:#fff;
+      display:grid; place-items:center; text-align:center; color:#fff;
+      background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+                  url('IMG_2718.JPG') center/cover no-repeat;
       padding: clamp(60px, 10vh, 120px) 16px 80px;
     }
-    .heroContent{
-      width:var(--container);
-    }
+    .heroContent{ width:var(--container); }
     .quote{
-      font-family:"Dancing Script", cursive;
+      font-family:"Dancing Script",cursive;
       font-size: clamp(28px, 6.5vw, 48px);
-      line-height:1.1;
-      margin: 0 0 14px;
+      line-height:1.1; margin:0 0 14px;
       text-shadow: 0 4px 24px rgba(0,0,0,.45);
     }
     .brand{
       display:flex; align-items:center; gap:12px; justify-content:center;
       font-family:"Playfair Display",serif; font-weight:700; letter-spacing:.02em;
-      font-size: clamp(18px, 3.8vw, 22px);
-      opacity:.95; margin-bottom:10px;
+      font-size: clamp(18px, 3.8vw, 22px); opacity:.95; margin-bottom:10px;
     }
-    .cta{
-      margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
-    }
+    .cta{ margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
     .btn{
       display:inline-flex; align-items:center; gap:10px;
       padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:600;
       box-shadow:0 12px 30px rgba(0,0,0,.25);
       transition:transform .15s ease, filter .2s;
+      color:#fff;
     }
     .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:linear-gradient(180deg,var(--gold),#a98648); color:#fff}
-    .btn-ghost{background:rgba(255,255,255,.75); color:#1f1a18; border:1px solid rgba(255,255,255,.95)}
+    .btn-primary{background:linear-gradient(180deg,var(--gold),#a98648)}
+    .btn-ghost{background:rgba(255,255,255,.85); color:#1f1a18; border:1px solid rgba(255,255,255,.95)}
 
-    /* ------- BLOQUE SECCIÓN ------- */
+    /* SECCIÓN MI HISTORIA */
     .section{
-      width:var(--container);
-      margin: 64px auto;
-      background:#fff;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
+      width:var(--container); margin:64px auto; background:#fff;
+      border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
     }
     .section__head{
-      background:linear-gradient(180deg, #fff, #fbf6f1);
-      padding:28px 24px 8px;
-      text-align:center;
-      border-bottom:1px solid #f0e9e2;
+      background:linear-gradient(180deg,#fff,#fbf6f1);
+      padding:28px 24px 8px; text-align:center; border-bottom:1px solid #f0e9e2;
     }
-    .kicker{
-      color:var(--accent);
-      font-family:"Playfair Display",serif; letter-spacing:.08em;
-      font-size:14px; text-transform:uppercase;
+    .kicker{ color:var(--accent); font-family:"Playfair Display",serif; letter-spacing:.08em; font-size:14px; text-transform:uppercase;}
+    .script{ font-family:"Dancing Script",cursive; font-size: clamp(28px,6.5vw,44px); color:var(--accent); margin:6px 0 14px;}
+    .section__body{ padding:26px 22px 34px; color:var(--muted); line-height:1.7; font-size:16px}
+
+    /* BOTÓN flotante WhatsApp */
+    .wa-float{
+      position:fixed; left:16px; bottom:16px; z-index:20;
+      width:56px; height:56px; border-radius:50%; display:grid; place-items:center;
+      background:#25D366; color:#fff; text-decoration:none; font-size:26px;
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
     }
-    .script{
-      font-family:"Dancing Script", cursive;
-      font-size: clamp(28px, 6.5vw, 44px);
-      color:var(--accent);
-      margin: 6px 0 14px;
+
+    /* FOOTER con redes */
+    footer{ text-align:center; color:#eee; background:#111; padding:16px }
+    .socials{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:6px }
+    .socials a{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; text-decoration:none; font-weight:600; color:#111; background:#fff;
     }
-    .section__body{
-      padding: 26px 22px 34px;
-      display:grid; grid-template-columns: 1fr; gap:20
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="heroContent">
+      <div class="brand">Gaby T Makeup</div>
+      <h1 class="quote">“Natural & Glam para tu mejor versión.”</h1>
+      <p>Clases online, asesorías 1:1 y todo lo relacionado con mi marca.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://wa.me/17867168939" target="_blank">💬 Escríbeme por WhatsApp</a>
+        <a class="btn btn-ghost" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MI HISTORIA -->
+  <article class="section" id="historia">
+    <header class="section__head">
+      <div class="kicker">Sobre mí</div>
+      <h2 class="script">Mi historia</h2>
+    </header>
+    <div class="section__body">
+      <p>Soy Gaby, maquilladora profesional y educadora con más de 11 años de experiencia.
+         Creo en el poder del maquillaje para resaltar lo mejor de cada mujer: natural & glam, siempre tú. ✨</p>
+      <p>Muy pronto encontrarás aquí mis clases online, workshops en vivo y recursos para que lleves tu makeup al siguiente nivel.</p>
+    </div>
+  </article>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/17867168939" target="_blank" aria-label="Whatsapp">🟢</a>
+
+  <!-- FOOTER con redes -->
+  <footer>
+    <div>© <span id="y"></span> Gaby T Makeup</div>
+    <div class="socials">
+      <a href="https://instagram.com/gabytmakeup" target="_blank">📸 Instagram</a>
+      <a href="https://wa.me/17867168939" target="_blank">💬 WhatsApp</a>
+      <a href="https://tiktok.com/@gabytmakeup" target="_blank">🎵 TikTok</a>
+      <a href="https://youtube.com/@gabytmakeup" target="_blank">▶️ YouTube</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
