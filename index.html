@@ -1,161 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gaby T Makeup — Natural & Glam</title>
-  <meta name="description" content="Maquillaje profesional, clases de automaquillaje y asesorías 1:1. Natural & Glam para tu mejor versión." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaby T Makeup</title>
   <style>
     :root{
-      --champagne:#FFF4EC;
-      --text:#2b2b2b;
-      --muted:#6b6b6b;
-      --gold:#C9A66B;
-      --rose:#C57E71;
+      --champagne:#FFF5EE;
+      --beige:#F8EFEA;
+      --terracotta:#C76D5B;
+      --gold:#D4AF37;
+      --gold-dark:#B9972E;
+      --charcoal:#2E2E2E;
+      --ink:#1f1f1f;
       --white:#ffffff;
-      --shadow:0 10px 35px rgba(0,0,0,.18);
-      --radius:16px;
-      --max:1100px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text)}
-    a{text-decoration:none;color:inherit}
 
-    /* Header */
-    .topbar{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #eee;z-index:50}
-    .nav{max-width:var(--max);margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center}
-    .brand b{font-weight:800;letter-spacing:.3px}
-    .brand small{color:var(--muted)}
-    .links{display:flex;gap:20px;font-weight:600}
-    .burger{display:none;font-size:28px;background:none;border:0}
-    @media(max-width:860px){.links{display:none}.burger{display:block}}
+    body{margin:0;font-family:'Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--champagne);}
+    header{background:var(--white);padding:15px 25px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.05);}
+    header .logo{font-weight:700;}
+    nav a{margin-left:18px;text-decoration:none;color:var(--ink);font-weight:500;}
 
     /* Hero */
-    .hero{position:relative;min-height:92vh;display:grid;place-items:center;color:#fff;text-align:center}
-    .hero::before{content:"";position:absolute;inset:0;background:url('./IMG_2718.JPG') center/cover no-repeat;filter:brightness(.65);z-index:-2}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.45));z-index:-1}
-    .hero .intro{max-width:820px;padding:0 18px}
-    .tag{letter-spacing:.35em;font-weight:700}
-    h1{font-size:clamp(32px,7vw,54px);margin:.2em 0}
-    .sub{font-size:clamp(18px,3.8vw,22px);color:#f1f1f1}
+    .hero{position:relative;text-align:center;color:var(--white);}
+    .hero img{width:100%;height:auto;display:block;}
+    .hero-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90%;}
+    .hero-text h1{font-size:2rem;margin:.4rem 0;}
+    .hero-text p{margin:.6rem 0 1.2rem;}
+    .btn{display:inline-block;padding:14px 20px;border-radius:999px;font-weight:600;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.1);transition:.2s;}
+    .btn:hover{transform:translateY(-2px);opacity:.95;}
+    .btn-wa{background:var(--gold);color:var(--charcoal);}
+    .btn-wa:hover{background:var(--gold-dark);}
+    .btn-ig{background:var(--terracotta);color:var(--white);}
 
-    .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-    .btn{padding:14px 22px;border-radius:999px;font-weight:700;color:#fff;box-shadow:var(--shadow)}
-    .btn-whatsapp{background:#25D366}
-    .btn-ig{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
-    .btn-tt{background:#000}
-    .btn-yt{background:#FF0033}
+    /* Secciones */
+    section{padding:60px 20px;max-width:1000px;margin:auto;}
+    .section-title{font-size:1.8rem;margin-bottom:15px;}
+    .lead{font-size:1.1rem;color:#555;}
 
-    section{padding:64px 18px}
-    .wrap{max-width:var(--max);margin:0 auto}
-    .section-title{font-size:clamp(28px,5vw,40px);margin-bottom:10px}
-    .lead{color:var(--muted);margin-bottom:28px}
+    /* Testimonios */
+    #testimonios{background:var(--beige);}
+    .testimonial{background:var(--white);padding:20px;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.06);margin:10px;}
 
-    .cards{display:grid;gap:16px}
-    .card{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .chip{background:var(--champagne);padding:4px 10px;border-radius:999px;font-weight:600;font-size:.85rem}
-
-    .testi{background:var(--champagne)}
-    .quotes{display:grid;gap:18px}
-    .quote{background:#fff;border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.1);font-style:italic}
-    .author{margin-top:10px;font-weight:700;color:var(--rose)}
-
-    .contact .panel{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .social-grid{display:grid;gap:12px;max-width:520px}
-    footer{padding:24px;text-align:center;color:#777;font-size:.9rem}
-
-    @media(min-width:680px){
-      .cards{grid-template-columns:repeat(3,1fr)}
-      .quotes{grid-template-columns:1fr 1fr}
-      .social-grid{grid-template-columns:1fr 1fr}
-    }
+    /* Contacto */
+    .contact-card{background:var(--white);border-radius:20px;box-shadow:0 18px 50px rgba(0,0,0,.08);padding:26px;max-width:820px;margin:22px auto 60px;}
+    .social-grid{display:grid;gap:12px;margin:18px 0 8px;}
+    .btn-tt{background:var(--charcoal);color:var(--white);}
+    .btn-yt{background:#A34A40;color:var(--white);}
+    footer{background:var(--charcoal);color:var(--white);text-align:center;padding:20px;font-size:.9rem;}
   </style>
 </head>
 <body>
 
-<header class="topbar">
-  <nav class="nav">
-    <div class="brand">
-      <b>Gaby T Makeup</b>
-      <small>Natural & Glam</small>
-    </div>
-    <div class="links">
-      <a href="#servicios">Servicios</a>
-      <a href="#clases">Clases</a>
-      <a href="#testimonios">Testimonios</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-    <button class="burger" onclick="document.querySelector('.links').classList.toggle('show')">☰</button>
+<header>
+  <div class="logo">Gaby T Makeup<br><small>Natural & Glam</small></div>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#clases">Clases</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
-<section class="hero" id="inicio">
-  <div class="intro">
-    <div class="tag">GABY T MAKEUP</div>
+<section class="hero">
+  <img src="https://via.placeholder.com/1200x700" alt="Hero image">
+  <div class="hero-text">
+    <h3>GABY T MAKEUP</h3>
     <h1>Tu mejor versión, con luz real ✨</h1>
-    <p class="sub">“Natural & Glam para tu mejor versión.”</p>
-    <p class="sub" style="font-size:18px;opacity:.9">Clases online, asesorías 1:1 y todo lo relacionado con mi marca. Acabados elegantes, piel bonita y técnicas que perduran.</p>
-    <div class="cta-row">
-      <a class="btn btn-whatsapp" href="https://wa.me/17867168939?text=Hola%20Gaby!%20Quiero%20agendar%20un%20servicio%20o%20clase" target="_blank">Reservar por WhatsApp</a>
-      <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
-    </div>
+    <p>“Natural & Glam para tu mejor versión.”<br>
+    Clases online, asesorías 1:1 y todo lo relacionado con mi marca. Acabados elegantes, piel bonita y técnicas que perduran.</p>
+    <a class="btn btn-wa" href="https://wa.me/17867168939" target="_blank">Reservar por WhatsApp</a>
+    <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
   </div>
 </section>
 
-<section id="servicios">
-  <div class="wrap">
-    <h2 class="section-title">Servicios</h2>
-    <p class="lead">Novias, social glam, madrinas y más. Piel bonita, técnica impecable y armonía con tu estilo.</p>
-    <div class="cards">
-      <div class="card"><h3>Maquillaje de Novia</h3><p>Look atemporal y elegante que dura toda la celebración.</p><span class="chip">Bridal</span></div>
-      <div class="card"><h3>Social Glam</h3><p>Perfecto para eventos, fotos y momentos especiales.</p><span class="chip">Eventos</span></div>
-      <div class="card"><h3>Asesoría 1:1</h3><p>Sesión personalizada para perfeccionar tu rutina.</p><span class="chip">Personalizado</span></div>
-    </div>
+<section id="testimonios">
+  <h2 class="section-title">Testimonios</h2>
+  <p class="lead">Lo que dicen mis clientas ✨</p>
+  <div class="testimonial">
+    <p>“Mi maquillaje de novia duró impecable toda la noche. Me sentí yo, pero más bonita.”<br>— <b>Andrea R.</b></p>
+  </div>
+  <div class="testimonial">
+    <p>“La clase 1:1 me cambió la rutina. Ahora hago mi piel en 10 minutos y se ve profesional.”<br>— <b>Valentina G.</b></p>
   </div>
 </section>
 
-<section id="clases">
-  <div class="wrap">
-    <h2 class="section-title">Clases</h2>
-    <p class="lead">Automaquillaje paso a paso, piel luminosa y técnicas profesionales.</p>
-    <div class="cards">
-      <div class="card"><h3>Básicos Esenciales</h3><p>Piel, cejas y labios. Ideal para iniciar tu rutina.</p><span class="chip">Nivel 1</span></div>
-      <div class="card"><h3>Natural & Glam</h3><p>Sube el nivel sin perder naturalidad.</p><span class="chip">Nivel 2</span></div>
-      <div class="card"><h3>Transformación</h3><p>De día a noche en simples pasos.</p><span class="chip">Avanzado</span></div>
+<section id="contacto">
+  <h2 class="section-title">Contacto</h2>
+  <p class="lead">¿Lista para brillar? Escríbeme y agenda tu cita ✨</p>
+  <div class="contact-card">
+    <div class="social-grid">
+      <a class="btn btn-wa" href="https://wa.me/17867168939" target="_blank">WhatsApp</a>
+      <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank">Instagram</a>
+      <a class="btn btn-tt" href="https://tiktok.com/@gabytmakeup" target="_blank">TikTok</a>
+      <a class="btn btn-yt" href="https://youtube.com/@gabytmakeup" target="_blank">YouTube</a>
     </div>
-  </div>
-</section>
-
-<section class="testi" id="testimonios">
-  <div class="wrap">
-    <h2 class="section-title">Testimonios</h2>
-    <p class="lead">Lo que dicen mis clientas ✨</p>
-    <div class="quotes">
-      <div class="quote">“Mi maquillaje de novia duró impecable toda la noche. Me sentí yo, pero más bonita.”<div class="author">— Andrea R.</div></div>
-      <div class="quote">“La clase 1:1 me cambió la rutina. Ahora hago mi piel en 10 minutos y se ve profesional.”<div class="author">— Valentina G.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contacto">
-  <div class="wrap">
-    <h2 class="section-title">Contacto</h2>
-    <p class="lead">¿Lista para brillar? Escríbeme y agenda tu cita ✨</p>
-    <div class="panel">
-      <div class="social-grid">
-        <a class="btn btn-whatsapp" href="https://wa.me/17867168939" target="_blank">WhatsApp</a>
-        <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank">Instagram</a>
-        <a class="btn btn-tt" href="https://tiktok.com/@gabytmakeup" target="_blank">TikTok</a>
-        <a class="btn btn-yt" href="https://youtube.com/@gabytmakeup" target="_blank">YouTube</a>
-      </div>
-      <p class="note">También puedes escribirme directo a: <b>info@gabytmakeup.com</b></p>
-    </div>
+    <p class="lead">También puedes escribirme directo a:<br>
+      <a href="mailto:info@gabytmakeup.com">info@gabytmakeup.com</a>
+    </p>
   </div>
 </section>
 
 <footer>
-  © 2025 Gaby T Makeup · Natural & Glam · Todos los derechos reservados
+  © 2025 Gaby T Makeup · Natural & Glam
 </footer>
 
 </body>
