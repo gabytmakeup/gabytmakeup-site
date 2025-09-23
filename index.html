@@ -4,120 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gaby T Makeup — Natural & Glam</title>
-  <meta name="description" content="Maquillaje natural & glam. Clases, citas y formación con Gaby T Makeup.">
-
-  <!-- Tipografías elegantes -->
+  <meta name="description" content="Maquillaje natural & glam para novias y eventos. Clases de automaquillaje y asesorías 1:1.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f5efe9; --ink:#2b2320; --muted:#6f5e56;
-      --accent:#7e1f3d; --gold:#c9a15b;
-      --radius:18px; --container:min(1000px,92vw);
-      --shadow:0 22px 60px rgba(0,0,0,.25);
+      /* Paleta de Gaby */
+      --gold:#C9A15D; --gold2:#A98648;
+      --nude:#E9D7C2; --ink:#2B1B17; --muted:#6f5e56; --white:#fff;
+      --radius:16px; --shadow:0 16px 40px rgba(0,0,0,.12);
+      --container:min(1100px,92vw);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    html,body{margin:0}
+    body{font-family:Poppins,system-ui,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,var(--nude));line-height:1.6}
 
-    /* HERO (con imagen tuya) */
-    .hero{
-      min-height:100vh;
-      display:grid; place-items:center; text-align:center; color:#fff;
-      background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.35)),
-                  url('IMG_2718.JPG') center/cover no-repeat;
-      padding: clamp(60px, 10vh, 120px) 16px 80px;
-    }
-    .heroContent{ width:var(--container); }
-    .quote{
-      font-family:"Dancing Script",cursive;
-      font-size: clamp(28px, 6.5vw, 48px);
-      line-height:1.1; margin:0 0 14px;
-      text-shadow: 0 4px 24px rgba(0,0,0,.45);
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; justify-content:center;
-      font-family:"Playfair Display",serif; font-weight:700; letter-spacing:.02em;
-      font-size: clamp(18px, 3.8vw, 22px); opacity:.95; margin-bottom:10px;
-    }
-    .cta{ margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:600;
-      box-shadow:0 12px 30px rgba(0,0,0,.25);
-      transition:transform .15s ease, filter .2s;
-      color:#fff;
-    }
+    /* Nav mínimo (anclas) */
+    .nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid #efe7df}
+    .nav .wrap{width:var(--container);margin:auto;display:flex;gap:10px;justify-content:space-between;align-items:center;padding:10px 12px}
+    .menu a{padding:8px 10px;border-radius:999px;text-decoration:none;color:var(--ink)}
+    .menu a:hover{background:#fff;border:1px solid #efe7df}
+
+    /* Botones */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
+    .btn-primary{color:#fff;background:linear-gradient(180deg,var(--gold),var(--gold2))}
+    .btn-ghost{color:var(--ink);background:#fff;border:1px solid #efe7df}
     .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:linear-gradient(180deg,var(--gold),#a98648)}
-    .btn-ghost{background:rgba(255,255,255,.85); color:#1f1a18; border:1px solid rgba(255,255,255,.95)}
 
-    /* SECCIÓN MI HISTORIA */
-    .section{
-      width:var(--container); margin:64px auto; background:#fff;
-      border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
-    }
-    .section__head{
-      background:linear-gradient(180deg,#fff,#fbf6f1);
-      padding:28px 24px 8px; text-align:center; border-bottom:1px solid #f0e9e2;
-    }
-    .kicker{ color:var(--accent); font-family:"Playfair Display",serif; letter-spacing:.08em; font-size:14px; text-transform:uppercase;}
-    .script{ font-family:"Dancing Script",cursive; font-size: clamp(28px,6.5vw,44px); color:var(--accent); margin:6px 0 14px;}
-    .section__body{ padding:26px 22px 34px; color:var(--muted); line-height:1.7; font-size:16px}
+    /* HERO */
+    .hero{min-height:100vh;display:grid;place-items:center;text-align:center;color:#fff;
+          background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.35)), url('IMG_2718.JPG') center/cover no-repeat;
+          padding:56px 16px 80px}
+    .hero .card{width:var(--container);margin:auto}
+    .brand{font-family:"Playfair Display",serif;font-size:clamp(18px,3.8vw,22px);letter-spacing:.02em;margin-bottom:8px}
+    .quote{font-family:"Playfair Display",serif;font-size:clamp(28px,6.2vw,48px);margin:0 0 10px;text-shadow:0 8px 30px rgba(0,0,0,.35)}
+    .lead{max-width:780px;margin:0 auto 16px;color:#f3ede8;text-shadow:0 6px 20px rgba(0,0,0,.35)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
-    /* BOTÓN flotante WhatsApp */
-    .wa-float{
-      position:fixed; left:16px; bottom:16px; z-index:20;
-      width:56px; height:56px; border-radius:50%; display:grid; place-items:center;
-      background:#25D366; color:#fff; text-decoration:none; font-size:26px;
-      box-shadow:0 10px 28px rgba(0,0,0,.25);
-    }
+    /* Secciones */
+    section{padding:42px 12px}
+    .wrap{width:var(--container);margin:auto}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(22px,4.8vw,32px);margin:0 0 14px}
+    .muted{color:var(--muted)}
 
-    /* FOOTER con redes */
-    footer{ text-align:center; color:#eee; background:#111; padding:16px }
-    .socials{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:6px }
-    .socials a{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:999px; text-decoration:none; font-weight:600; color:#111; background:#fff;
-    }
+    /* Servicios (cards) */
+    .grid-3{display:grid;gap:16px;grid-template-columns:1fr}
+    @media(min-width:860px){.grid-3{grid-template-columns:1fr 1fr 1fr}}
+    .card{background:#fff;border:1px solid #efe7df;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card h3{font-family:"Playfair Display",serif;margin:4px 0 8px}
+    .card p{margin:0 0 12px}
+
+    /* Clases (destacado) */
+    .highlight{background:#fff;border:1px solid #efe7df;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;text-align:center}
+
+    /* Testimonios */
+    .quotes{display:grid;gap:14px}
+    .quote{background:#fff;border:1px solid #efe7df;border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);font-size:15px}
+    .quote strong{color:var(--gold2)}
+
+    /* Footer */
+    footer{padding:24px 12px 60px;text-align:center;color:#6f5e56}
+    .socials{margin-top:8px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .socials a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;text-decoration:none;background:#fff;border:1px solid #efe7df}
+
+    /* Botón flotante WhatsApp */
+    .wa{position:fixed;right:14px;bottom:14px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+        color:#fff;background:#25D366;text-decoration:none;font-weight:700;box-shadow:0 10px 26px rgba(0,0,0,.2)}
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="heroContent">
-      <div class="brand">Gaby T Makeup</div>
-      <h1 class="quote">“Natural & Glam para tu mejor versión.”</h1>
-      <p>Clases online, asesorías 1:1 y todo lo relacionado con mi marca.</p>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <div style="font-weight:700">Gaby T Makeup</div>
+      <div class="menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#clases">Clases</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME / HERO -->
+  <header class="hero" id="home">
+    <div class="card">
+      <div class="brand">Natural & Glam</div>
+      <h1 class="quote">Tu mejor versión, con luz real ✨</h1>
+      <p class="lead">Novias, social glam y clases de automaquillaje. Piel bonita, acabados elegantes y técnicas que duran.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://wa.me/17867168939" target="_blank">💬 Escríbeme por WhatsApp</a>
-        <a class="btn btn-ghost" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
+        <a class="btn btn-primary" href="https://wa.me/17867168939" target="_blank">Reservar por WhatsApp</a>
+        <a class="btn btn-ghost" href="https://instagram.com/gabytmakeup" target="_blank">@gabytmakeup</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="wrap">
+      <h2>Servicios</h2>
+      <p class="muted">Elegidos para novias y eventos — acabados luminosos, glam y atemporales.</p>
+      <div class="grid-3" style="margin-top:14px">
+        <article class="card">
+          <h3>Novias & Trial</h3>
+          <p>Skin prep, diseño del look y prueba previa. Duración y confort para tu gran día.</p>
+          <a class="btn btn-ghost" href="https://wa.me/17867168939" target="_blank">Consultar disponibilidad</a>
+        </article>
+        <article class="card">
+          <h3>Social Glam</h3>
+          <p>Invitadas, eventos y sesiones. Glow elegante, ojos definidos y labios perfectos.</p>
+          <a class="btn btn-ghost" href="https://wa.me/17867168939" target="_blank">Agenda tu cita</a>
+        </article>
+        <article class="card">
+          <h3>Producción / Fotos</h3>
+          <p>Maquillaje para campañas y editoriales, bajo requerimientos de marca.</p>
+          <a class="btn btn-ghost" href="https://wa.me/17867168939" target="_blank">Pedir cotización</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- MI HISTORIA -->
-  <article class="section" id="historia">
-    <header class="section__head">
-      <div class="kicker">Sobre mí</div>
-      <h2 class="script">Mi historia</h2>
-    </header>
-    <div class="section__body">
-      <p>Soy Gaby, maquilladora profesional y educadora con más de 11 años de experiencia.
-         Creo en el poder del maquillaje para resaltar lo mejor de cada mujer: natural & glam, siempre tú. ✨</p>
-      <p>Muy pronto encontrarás aquí mis clases online, workshops en vivo y recursos para que lleves tu makeup al siguiente nivel.</p>
+  <!-- CLASES -->
+  <section id="clases">
+    <div class="wrap">
+      <h2>Clases de Automaquillaje</h2>
+      <div class="highlight">
+        <p class="muted" style="margin-top:0">Aprende mi método para piel real y glow que dura — desde lo básico hasta looks de noche.</p>
+        <!-- Cuando tengas tu link de venta, reemplaza # por tu URL -->
+        <a class="btn btn-primary" href="#" target="_blank">Quiero información</a>
+        <a class="btn btn-ghost" href="mailto:infogabytmakeup@gmail.com">Escríbeme</a>
+      </div>
     </div>
-  </article>
+  </section>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
-  <a class="wa-float" href="https://wa.me/17867168939" target="_blank" aria-label="Whatsapp">🟢</a>
+  <!-- TESTIMONIOS -->
+  <section id="testimonios">
+    <div class="wrap">
+      <h2>Testimonios</h2>
+      <div class="quotes" style="margin-top:10px">
+        <div class="quote">“Mi maquillaje duró toda la boda y me sentí yo misma, hermosa. ¡Gracias Gaby!” — <strong>Ana</strong></div>
+        <div class="quote">“Aprendí a hacerme la piel luminosa sin sentirla pesada. Clases súper claras.” — <strong>María</strong></div>
+        <div class="quote">“En fotos se veía impecable. Puntual y súper profesional.” — <strong>Laura</strong></div>
+      </div>
+    </div>
+  </section>
 
-  <!-- FOOTER con redes -->
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <p class="muted">¿Reserva, clase privada o colaboración? Escríbeme y te respondo pronto.</p>
+      <div class="cta" style="margin-top:10px">
+        <a class="btn btn-primary" href="https://wa.me/17867168939" target="_blank">WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:infogabytmakeup@gmail.com">Email</a>
+        <a class="btn btn-ghost" target="_blank" href="https://instagram.com/gabytmakeup">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <div>© <span id="y"></span> Gaby T Makeup</div>
+    <div>© <span id="y"></span> Gaby T Makeup · Natural & Glam</div>
     <div class="socials">
       <a href="https://instagram.com/gabytmakeup" target="_blank">📸 Instagram</a>
       <a href="https://wa.me/17867168939" target="_blank">💬 WhatsApp</a>
@@ -126,6 +176,9 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <!-- Botón flotante WhatsApp -->
+  <a class="wa" href="https://wa.me/17867168939" target="_blank" aria-label="WhatsApp">WA</a>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
