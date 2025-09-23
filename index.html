@@ -28,7 +28,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
       color: var(--charcoal);
       background: var(--crema);
       line-height: 1.5;
@@ -48,15 +48,9 @@
       display:flex; align-items:center; justify-content:space-between;
       gap:12px;
     }
-    .brand{
-      font-weight:700;
-      letter-spacing:.3px;
-      line-height:1.1;
-    }
+    .brand{ font-weight:700; letter-spacing:.3px; line-height:1.1; }
     .brand span{display:block; font-weight:600; font-size:12px; color:var(--gris)}
-    .menu{
-      display:flex; gap:22px; align-items:center; flex-wrap:wrap;
-    }
+    .menu{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
     .menu a{
       color: var(--charcoal);
       text-decoration:none;
@@ -83,11 +77,10 @@
       transform: scale(1.02);
       filter: saturate(1) contrast(1) brightness(.9);
     }
-    /* Degradé para legibilidad del texto */
     .hero::after{
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.50) 55%, rgba(0,0,0,.35) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.52) 55%, rgba(0,0,0,.35) 100%);
     }
     .hero .inner{
       position:relative; z-index:1;
@@ -96,10 +89,8 @@
     }
     .kicker{
       font: 600 14px Inter, system-ui;
-      letter-spacing:.22em;
-      text-transform: uppercase;
-      color: #f6e7cf;
-      margin-bottom: 10px;
+      letter-spacing:.22em; text-transform: uppercase;
+      color: #f6e7cf; margin-bottom: 10px;
     }
     .title{
       font-family: "Playfair Display", serif;
@@ -118,8 +109,7 @@
       text-shadow: 0 6px 22px rgba(0,0,0,.55);
     }
     .lead{
-      max-width: 720px;
-      margin: 0 auto 18px auto;
+      max-width: 720px; margin: 0 auto 18px auto;
       color: #f0e8df;
       text-shadow: 0 6px 22px rgba(0,0,0,.55);
       font-size: clamp(15px, 2.9vw, 18px);
@@ -131,14 +121,10 @@
     .btn{
       appearance:none; border:0; cursor:pointer;
       display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration:none;
-      transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
-      will-change: transform, box-shadow;
-      box-shadow: var(--shadow);
+      gap:10px; padding: 14px 22px;
+      border-radius: 999px; font-weight: 700;
+      text-decoration:none; transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+      will-change: transform, box-shadow; box-shadow: var(--shadow);
       font-size: 15px;
     }
     .btn:active{ transform: translateY(1px) scale(.99) }
@@ -147,23 +133,17 @@
     .btn.light{ background: rgba(255,255,255,.85); color:#222 }
     .btn.light:hover{ background: rgba(255,255,255,.95) }
 
-    /* ====== Secciones básicas ====== */
+    /* ====== Secciones ====== */
     section{ padding: 72px 18px }
     .wrap{ max-width: var(--max); margin: 0 auto }
     .h2{
-      font-family: "Playfair Display", serif;
-      font-weight:600;
+      font-family: "Playfair Display", serif; font-weight:600;
       font-size: clamp(26px, 5vw, 34px);
-      margin: 0 0 10px;
-      color: var(--charcoal);
+      margin: 0 0 10px; color: var(--charcoal);
     }
     .sub{ color: var(--gris); margin: 0 0 26px }
 
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:18px;
-    }
+    .cards{ display:grid; grid-template-columns: repeat(12, 1fr); gap:18px; }
     .card{
       grid-column: span 12;
       background: var(--crema-2);
@@ -179,23 +159,46 @@
     }
     .card p{ margin:0 }
 
+    /* ====== Testimonios ====== */
+    .testi{
+      background: #fff;
+      border: 1px solid #efe5db;
+      border-radius: var(--radius);
+      padding: 18px;
+      font-style: italic;
+    }
+    .testi strong{ display:block; margin-top:8px; font-style: normal; color: var(--terracota); }
+
+    /* ====== Contacto ====== */
+    .contact-grid{ display:grid; grid-template-columns: repeat(12,1fr); gap:18px; }
+    .contact-card{
+      grid-column: span 12;
+      background: #fff;
+      border: 1px solid #efe5db;
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .contact-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px }
+
     /* ====== Footer ====== */
     footer{
-      background: #151515;
-      color:#d9d2c9;
-      padding: 36px 18px;
-      text-align:center;
+      background: #151515; color:#d9d2c9;
+      padding: 36px 18px; text-align:center;
     }
     footer a{ color:#f1e6d5; text-decoration:none }
     footer a:hover{ color: var(--dorado) }
 
     /* ====== Responsive ====== */
     @media (min-width: 680px){
-      .card{ padding: 22px }
+      .card, .testi, .contact-card{ padding: 22px }
       .cards .card{ grid-column: span 6 }
+      .contact-grid .contact-card{ grid-column: span 6 }
+      .testi{ grid-column: span 6 }
     }
     @media (min-width: 980px){
       .cards .card{ grid-column: span 4 }
+      .testi{ grid-column: span 4 }
+      .contact-grid .contact-card{ grid-column: span 6 }
     }
     @media (max-width: 860px){
       .menu{ display:none }
@@ -219,9 +222,7 @@
         Gaby T Makeup
         <span>Natural & Glam</span>
       </div>
-
       <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
-
       <div class="menu" id="menu">
         <a href="#servicios">Servicios</a>
         <a href="#clases">Clases</a>
@@ -238,7 +239,6 @@
       <h1 class="title">Tu mejor versión, con luz real ✨</h1>
       <p class="quote">“Natural & Glam para tu mejor versión.”</p>
       <p class="lead">Clases online, asesorías 1:1 y todo lo relacionado con mi marca. Acabados elegantes, piel bonita y técnicas que perduran.</p>
-
       <div class="cta-row">
         <a class="btn primary" href="https://wa.me/17867168939?text=Hola%20Gaby%2C%20quiero%20reservar%20mi%20maquillaje%20%F0%9F%92%84" target="_blank" rel="noopener">Reservar por WhatsApp</a>
         <a class="btn light" href="https://instagram.com/gabytmakeup" target="_blank" rel="noopener">📸 Sígueme en Instagram</a>
@@ -251,7 +251,6 @@
     <div class="wrap">
       <h2 class="h2">Servicios</h2>
       <p class="sub">Novias, social glam, eventos y maquillaje editorial. Piel luminosa, elegante y fiel a ti.</p>
-
       <div class="cards">
         <article class="card">
           <h3>Novias</h3>
@@ -263,7 +262,7 @@
         </article>
         <article class="card">
           <h3>Asesorías 1:1</h3>
-          <p>Sesiones personalizadas para aprender tu rutina ideal y productos que te favorecen.</p>
+          <p>Sesiones personalizadas para tu rutina ideal y productos que te favorecen.</p>
         </article>
       </div>
     </div>
@@ -274,7 +273,6 @@
     <div class="wrap">
       <h2 class="h2">Clases</h2>
       <p class="sub">Domina tu piel, tu estilo y tus herramientas con mis clases online y presenciales.</p>
-
       <div class="cards">
         <article class="card">
           <h3>Automaquillaje</h3>
@@ -288,4 +286,34 @@
           <h3>Skincare para Makeup</h3>
           <p>Prepara tu piel como pro: rutinas, texturas y trucos para que el maquillaje luzca mejor.</p>
         </article>
-     
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIOS ====== -->
+  <section id="testimonios">
+    <div class="wrap">
+      <h2 class="h2">Testimonios</h2>
+      <p class="sub">Lo que dicen mis clientas ✨</p>
+      <div class="cards">
+        <blockquote class="testi">
+          “Mi maquillaje de novia duró impecable toda la noche. Me sentí yo, pero más bonita.”
+          <strong>— Andrea R.</strong>
+        </blockquote>
+        <blockquote class="testi">
+          “La clase 1:1 me cambió la rutina. Ahora hago mi piel en 10 minutos y se ve profesional.”
+          <strong>— Valentina G.</strong>
+        </blockquote>
+        <blockquote class="testi">
+          “Entiende perfecto el look ‘natural pero glam’. Fotos espectaculares sin verse pesado.”
+          <strong>— Camila S.</strong>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACTO ====== -->
+  <section id="contacto" style="background:#fff;">
+    <div class="wrap">
+      <h2 class="h2">Contacto</h2>
+      <p class="sub">¿Lista para brillar? Escríbeme y agend
