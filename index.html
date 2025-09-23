@@ -3,371 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gaby T Makeup</title>
-
-  <!-- Tipografías -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <title>Gaby T Makeup — Natural & Glam</title>
+  <meta name="description" content="Maquillaje profesional, clases de automaquillaje y asesorías 1:1. Natural & Glam para tu mejor versión." />
 
   <style>
-    /* ====== Paleta ====== */
     :root{
-      --crema: #fff4ea;
-      --crema-2: #f9efe7;
-      --dorado: #c7a15a;
-      --terracota: #b86b5b;
-      --charcoal:#1a1a1a;
-      --gris:#6b6b6b;
+      --champagne:#FFF4EC;
+      --text:#2b2b2b;
+      --muted:#6b6b6b;
+      --gold:#C9A66B;
+      --rose:#C57E71;
       --white:#ffffff;
-      --shadow: 0 10px 30px rgba(0,0,0,.18);
-      --radius: 16px;
-      --radius-sm:10px;
-      --max: 1120px;
+      --shadow:0 10px 35px rgba(0,0,0,.18);
+      --radius:16px;
+      --max:1100px;
     }
-
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-      color: var(--charcoal);
-      background: var(--crema);
-      line-height: 1.5;
-    }
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;color:var(--text)}
+    a{text-decoration:none;color:inherit}
 
-    /* ====== Navbar ====== */
-    .nav{
-      position: sticky; top:0; z-index: 50;
-      background: rgba(255,255,255,.75);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e9e1d9;
-    }
-    .nav .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 18px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
-    }
-    .brand{ font-weight:700; letter-spacing:.3px; line-height:1.1; }
-    .brand span{display:block; font-weight:600; font-size:12px; color:var(--gris)}
-    .menu{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
-    .menu a{
-      color: var(--charcoal);
-      text-decoration:none;
-      font-weight:600;
-      font-size: 15px;
-    }
-    .menu a:hover{color: var(--terracota)}
-    .burger{display:none; background:none; border:0; font-size:26px; line-height:1}
+    /* Header */
+    .topbar{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #eee;z-index:50}
+    .nav{max-width:var(--max);margin:0 auto;padding:12px 18px;display:flex;justify-content:space-between;align-items:center}
+    .brand b{font-weight:800;letter-spacing:.3px}
+    .brand small{color:var(--muted)}
+    .links{display:flex;gap:20px;font-weight:600}
+    .burger{display:none;font-size:28px;background:none;border:0}
+    @media(max-width:860px){.links{display:none}.burger{display:block}}
 
-    /* ====== Hero ====== */
-    .hero{
-      position: relative;
-      min-height: 92vh;
-      display:grid; place-items:center;
-      color:#fff;
-      text-align:center;
-      overflow:hidden;
-    }
-    /* Cambia el nombre del archivo si tu foto tiene otro nombre */
-    .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background: url("IMG_2718.JPG") center / cover no-repeat; /* <== aquí */
-      transform: scale(1.02);
-      filter: saturate(1) contrast(1) brightness(.9);
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.52) 55%, rgba(0,0,0,.35) 100%);
-    }
-    .hero .inner{
-      position:relative; z-index:1;
-      width:min(92%, 760px);
-      padding: clamp(16px, 4vw, 24px);
-    }
-    .kicker{
-      font: 600 14px Inter, system-ui;
-      letter-spacing:.22em; text-transform: uppercase;
-      color: #f6e7cf; margin-bottom: 10px;
-    }
-    .title{
-      font-family: "Playfair Display", serif;
-      font-weight: 600;
-      font-size: clamp(28px, 5.8vw, 46px);
-      line-height: 1.15;
-      margin: 0 0 10px 0;
-      text-shadow: 0 6px 26px rgba(0,0,0,.55);
-    }
-    .quote{
-      font-family: "Playfair Display", serif;
-      font-weight: 400;
-      font-size: clamp(22px, 4.8vw, 34px);
-      margin: 0 0 14px 0;
-      color: #fff;
-      text-shadow: 0 6px 22px rgba(0,0,0,.55);
-    }
-    .lead{
-      max-width: 720px; margin: 0 auto 18px auto;
-      color: #f0e8df;
-      text-shadow: 0 6px 22px rgba(0,0,0,.55);
-      font-size: clamp(15px, 2.9vw, 18px);
-    }
-    .cta-row{
-      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
-      margin-top: 10px;
-    }
-    .btn{
-      appearance:none; border:0; cursor:pointer;
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px; padding: 14px 22px;
-      border-radius: 999px; font-weight: 700;
-      text-decoration:none; transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
-      will-change: transform, box-shadow; box-shadow: var(--shadow);
-      font-size: 15px;
-    }
-    .btn:active{ transform: translateY(1px) scale(.99) }
-    .btn.primary{ background: var(--dorado); color:#2b220f }
-    .btn.primary:hover{ box-shadow: 0 12px 30px rgba(199,161,90,.35) }
-    .btn.light{ background: rgba(255,255,255,.85); color:#222 }
-    .btn.light:hover{ background: rgba(255,255,255,.95) }
+    /* Hero */
+    .hero{position:relative;min-height:92vh;display:grid;place-items:center;color:#fff;text-align:center}
+    .hero::before{content:"";position:absolute;inset:0;background:url('./IMG_2718.JPG') center/cover no-repeat;filter:brightness(.65);z-index:-2}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.45));z-index:-1}
+    .hero .intro{max-width:820px;padding:0 18px}
+    .tag{letter-spacing:.35em;font-weight:700}
+    h1{font-size:clamp(32px,7vw,54px);margin:.2em 0}
+    .sub{font-size:clamp(18px,3.8vw,22px);color:#f1f1f1}
 
-    /* ====== Secciones ====== */
-    section{ padding: 72px 18px }
-    .wrap{ max-width: var(--max); margin: 0 auto }
-    .h2{
-      font-family: "Playfair Display", serif; font-weight:600;
-      font-size: clamp(26px, 5vw, 34px);
-      margin: 0 0 10px; color: var(--charcoal);
-    }
-    .sub{ color: var(--gris); margin: 0 0 26px }
+    .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+    .btn{padding:14px 22px;border-radius:999px;font-weight:700;color:#fff;box-shadow:var(--shadow)}
+    .btn-whatsapp{background:#25D366}
+    .btn-ig{background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)}
+    .btn-tt{background:#000}
+    .btn-yt{background:#FF0033}
 
-    .cards{ display:grid; grid-template-columns: repeat(12, 1fr); gap:18px; }
-    .card{
-      grid-column: span 12;
-      background: var(--crema-2);
-      border: 1px solid #efe5db;
-      border-radius: var(--radius);
-      padding: 18px;
-    }
-    .card h3{
-      margin: 0 0 8px;
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      color: var(--terracota);
-    }
-    .card p{ margin:0 }
+    section{padding:64px 18px}
+    .wrap{max-width:var(--max);margin:0 auto}
+    .section-title{font-size:clamp(28px,5vw,40px);margin-bottom:10px}
+    .lead{color:var(--muted);margin-bottom:28px}
 
-    /* ====== Testimonios ====== */
-    .testi{
-      background: #fff;
-      border: 1px solid #efe5db;
-      border-radius: var(--radius);
-      padding: 18px;
-      font-style: italic;
-    }
-    .testi strong{ display:block; margin-top:8px; font-style: normal; color: var(--terracota); }
+    .cards{display:grid;gap:16px}
+    .card{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .chip{background:var(--champagne);padding:4px 10px;border-radius:999px;font-weight:600;font-size:.85rem}
 
-  <!-- CONTACTO -->
-<section id="contacto" class="section">
-  <div class="container">
-    <h2>Contacto</h2>
-    <p class="lead">¿Lista para brillar? Escríbeme y agendamos tu cita ✨</p>
+    .testi{background:var(--champagne)}
+    .quotes{display:grid;gap:18px}
+    .quote{background:#fff;border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(0,0,0,.1);font-style:italic}
+    .author{margin-top:10px;font-weight:700;color:var(--rose)}
 
-    <div class="social-grid">
-      <!-- WhatsApp -->
-      <a class="btn btn-whatsapp" href="https://wa.me/17867168939" target="_blank" rel="noopener">
-        💬 Escríbeme por WhatsApp
-      </a>
+    .contact .panel{background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .social-grid{display:grid;gap:12px;max-width:520px}
+    footer{padding:24px;text-align:center;color:#777;font-size:.9rem}
 
-      <!-- Instagram -->
-      <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank" rel="noopener">
-        📸 Sígueme en Instagram
-      </a>
-
-      <!-- TikTok (ajusta el usuario si es distinto) -->
-      <a class="btn btn-tt" href="https://www.tiktok.com/@gabytmakeup" target="_blank" rel="noopener">
-        🎵 TikTok
-      </a>
-
-      <!-- YouTube (ajusta el usuario si es distinto) -->
-      <a class="btn btn-yt" href="https://www.youtube.com/@gabytmakeup" target="_blank" rel="noopener">
-        ▶️ YouTube
-      </a>
-    </div>
-  </div>
-</section>
-
-    /* ====== Footer ====== */
-    footer{
-      background: #151515; color:#d9d2c9;
-      padding: 36px 18px; text-align:center;
-    }
-    footer a{ color:#f1e6d5; text-decoration:none }
-    footer a:hover{ color: var(--dorado) }
-
-    /* ====== Responsive ====== */
-    @media (min-width: 680px){
-      .card, .testi, .contact-card{ padding: 22px }
-      .cards .card{ grid-column: span 6 }
-      .contact-grid .contact-card{ grid-column: span 6 }
-      .testi{ grid-column: span 6 }
-    }
-    @media (min-width: 980px){
-      .cards .card{ grid-column: span 4 }
-      .testi{ grid-column: span 4 }
-      .contact-grid .contact-card{ grid-column: span 6 }
-    }
-    @media (max-width: 860px){
-      .menu{ display:none }
-      .burger{ display:block }
-      .menu.open{
-        display:flex; flex-direction:column; gap:14px;
-        position:absolute; left:0; right:0; top:58px;
-        background: rgba(255,255,255,.96);
-        padding:16px 18px 22px;
-        border-bottom:1px solid #e9e1d9;
-      }
+    @media(min-width:680px){
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .quotes{grid-template-columns:1fr 1fr}
+      .social-grid{grid-template-columns:1fr 1fr}
     }
   </style>
 </head>
 <body>
 
-  <!-- ====== NAV ====== -->
-  <nav class="nav" aria-label="Principal">
-    <div class="wrap">
-      <div class="brand">
-        Gaby T Makeup
-        <span>Natural & Glam</span>
-      </div>
-      <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
-      <div class="menu" id="menu">
-        <a href="#servicios">Servicios</a>
-        <a href="#clases">Clases</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
-      </div>
+<header class="topbar">
+  <nav class="nav">
+    <div class="brand">
+      <b>Gaby T Makeup</b>
+      <small>Natural & Glam</small>
     </div>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#clases">Clases</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <button class="burger" onclick="document.querySelector('.links').classList.toggle('show')">☰</button>
   </nav>
+</header>
 
-  <!-- ====== HERO ====== -->
-  <header class="hero" id="home" role="banner" aria-label="Portada">
-    <div class="inner">
-      <div class="kicker">Gaby T Makeup</div>
-      <h1 class="title">Tu mejor versión, con luz real ✨</h1>
-      <p class="quote">“Natural & Glam para tu mejor versión.”</p>
-      <p class="lead">Clases online, asesorías 1:1 y todo lo relacionado con mi marca. Acabados elegantes, piel bonita y técnicas que perduran.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="https://wa.me/17867168939?text=Hola%20Gaby%2C%20quiero%20reservar%20mi%20maquillaje%20%F0%9F%92%84" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-        <a class="btn light" href="https://instagram.com/gabytmakeup" target="_blank" rel="noopener">📸 Sígueme en Instagram</a>
-      </div>
+<section class="hero" id="inicio">
+  <div class="intro">
+    <div class="tag">GABY T MAKEUP</div>
+    <h1>Tu mejor versión, con luz real ✨</h1>
+    <p class="sub">“Natural & Glam para tu mejor versión.”</p>
+    <p class="sub" style="font-size:18px;opacity:.9">Clases online, asesorías 1:1 y todo lo relacionado con mi marca. Acabados elegantes, piel bonita y técnicas que perduran.</p>
+    <div class="cta-row">
+      <a class="btn btn-whatsapp" href="https://wa.me/17867168939?text=Hola%20Gaby!%20Quiero%20agendar%20un%20servicio%20o%20clase" target="_blank">Reservar por WhatsApp</a>
+      <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank">📸 Sígueme en Instagram</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ====== SERVICIOS ====== -->
-  <section id="servicios">
-    <div class="wrap">
-      <h2 class="h2">Servicios</h2>
-      <p class="sub">Novias, social glam, eventos y maquillaje editorial. Piel luminosa, elegante y fiel a ti.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Novias</h3>
-          <p>Prueba, look final, asesoría de piel y acompañamiento el día de tu boda.</p>
-        </article>
-        <article class="card">
-          <h3>Social Glam</h3>
-          <p>Maquillaje para invitadas, graduaciones y sesiones. Glam sofisticado que dura.</p>
-        </article>
-        <article class="card">
-          <h3>Asesorías 1:1</h3>
-          <p>Sesiones personalizadas para tu rutina ideal y productos que te favorecen.</p>
-        </article>
-      </div>
+<section id="servicios">
+  <div class="wrap">
+    <h2 class="section-title">Servicios</h2>
+    <p class="lead">Novias, social glam, madrinas y más. Piel bonita, técnica impecable y armonía con tu estilo.</p>
+    <div class="cards">
+      <div class="card"><h3>Maquillaje de Novia</h3><p>Look atemporal y elegante que dura toda la celebración.</p><span class="chip">Bridal</span></div>
+      <div class="card"><h3>Social Glam</h3><p>Perfecto para eventos, fotos y momentos especiales.</p><span class="chip">Eventos</span></div>
+      <div class="card"><h3>Asesoría 1:1</h3><p>Sesión personalizada para perfeccionar tu rutina.</p><span class="chip">Personalizado</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== CLASES ====== -->
-  <section id="clases" style="background:var(--crema-2); border-top:1px solid #efe5db; border-bottom:1px solid #efe5db;">
-    <div class="wrap">
-      <h2 class="h2">Clases</h2>
-      <p class="sub">Domina tu piel, tu estilo y tus herramientas con mis clases online y presenciales.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Automaquillaje</h3>
-          <p>Técnicas prácticas para el día a día: piel, ojos y labios con acabado pulido.</p>
-        </article>
-        <article class="card">
-          <h3>Pro Intensivo</h3>
-          <p>Para maquilladoras: flujos de trabajo, selección de productos y acabados editoriales.</p>
-        </article>
-        <article class="card">
-          <h3>Skincare para Makeup</h3>
-          <p>Prepara tu piel como pro: rutinas, texturas y trucos para que el maquillaje luzca mejor.</p>
-        </article>
-      </div>
+<section id="clases">
+  <div class="wrap">
+    <h2 class="section-title">Clases</h2>
+    <p class="lead">Automaquillaje paso a paso, piel luminosa y técnicas profesionales.</p>
+    <div class="cards">
+      <div class="card"><h3>Básicos Esenciales</h3><p>Piel, cejas y labios. Ideal para iniciar tu rutina.</p><span class="chip">Nivel 1</span></div>
+      <div class="card"><h3>Natural & Glam</h3><p>Sube el nivel sin perder naturalidad.</p><span class="chip">Nivel 2</span></div>
+      <div class="card"><h3>Transformación</h3><p>De día a noche en simples pasos.</p><span class="chip">Avanzado</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== TESTIMONIOS ====== -->
-  <section id="testimonios">
-    <div class="wrap">
-      <h2 class="h2">Testimonios</h2>
-      <p class="sub">Lo que dicen mis clientas ✨</p>
-      <div class="cards">
-        <blockquote class="testi">
-          “Mi maquillaje de novia duró impecable toda la noche. Me sentí yo, pero más bonita.”
-          <strong>— Andrea R.</strong>
-        </blockquote>
-        <blockquote class="testi">
-          “La clase 1:1 me cambió la rutina. Ahora hago mi piel en 10 minutos y se ve profesional.”
-          <strong>— Valentina G.</strong>
-        </blockquote>
-        <blockquote class="testi">
-          “Entiende perfecto el look ‘natural pero glam’. Fotos espectaculares sin verse pesado.”
-          <strong>— Camila S.</strong>
-        </blockquote>
-      </div>
+<section class="testi" id="testimonios">
+  <div class="wrap">
+    <h2 class="section-title">Testimonios</h2>
+    <p class="lead">Lo que dicen mis clientas ✨</p>
+    <div class="quotes">
+      <div class="quote">“Mi maquillaje de novia duró impecable toda la noche. Me sentí yo, pero más bonita.”<div class="author">— Andrea R.</div></div>
+      <div class="quote">“La clase 1:1 me cambió la rutina. Ahora hago mi piel en 10 minutos y se ve profesional.”<div class="author">— Valentina G.</div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  /* ===== Contacto: botones de redes ===== */
-.lead {
-  font-size: 1.1rem;
-  color: #6b6b6b;
-  margin-bottom: 1.25rem;
-}
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2 class="section-title">Contacto</h2>
+    <p class="lead">¿Lista para brillar? Escríbeme y agenda tu cita ✨</p>
+    <div class="panel">
+      <div class="social-grid">
+        <a class="btn btn-whatsapp" href="https://wa.me/17867168939" target="_blank">WhatsApp</a>
+        <a class="btn btn-ig" href="https://instagram.com/gabytmakeup" target="_blank">Instagram</a>
+        <a class="btn btn-tt" href="https://tiktok.com/@gabytmakeup" target="_blank">TikTok</a>
+        <a class="btn btn-yt" href="https://youtube.com/@gabytmakeup" target="_blank">YouTube</a>
+      </div>
+      <p class="note">También puedes escribirme directo a: <b>info@gabytmakeup.com</b></p>
+    </div>
+  </div>
+</section>
 
-.social-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  max-width: 520px;
-  margin: 0 auto;
-}
+<footer>
+  © 2025 Gaby T Makeup · Natural & Glam · Todos los derechos reservados
+</footer>
 
-.btn {
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,.12);
-  transition: transform .08s ease, box-shadow .2s ease, opacity .2s ease;
-}
-.btn:hover { transform: translateY(-1px); opacity: .95; }
-
-/* Colores de cada red */
-.btn-whatsapp { background: #25D366; }
-.btn-ig {
-  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-}
-.btn-tt { background: #000; }
-.btn-yt { background: #ff0033; }
-
-/* Responsive: en pantallas anchas, 2 columnas */
-@media (min-width: 680px) {
-  .social-grid { grid-template-columns: 1fr 1fr; }
-}
+</body>
+</html>
